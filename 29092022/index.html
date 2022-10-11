@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <img id = "myimg" src = "assets/images/pic_bulboff.gif" onclick = "myFunction()">
+    <!-- <input type ="button" id="btn" value = "ss" > -->
+
+
+    <script>
+        function myFunction() {
+            if(document.getElementById("myimg").src.match("assets/images/pic_bulboff.gif")){
+                document.getElementById("myimg").src=("assets/images/pic_bulbon.gif");
+            }
+            else{
+                document.getElementById("myimg").src=("assets/images/pic_bulboff.gif");
+            }
+        }
+
+
+
+
+
+        
+       </script>
+</body>
+</html>

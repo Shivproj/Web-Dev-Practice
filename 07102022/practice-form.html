@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6">
+                <Label>First Name</Label>
+                <input type = "text" id="fname" onchange="f1()">
+            </div>
+            <div class="col-md-6">
+                <label>Last Name</label>
+                <input type = "text" id="lname" onchange="f2()">
+            </div>
+            </div>
+            <Label>Phone Number</Label>
+            
+                <input type="text" id="phno" onchange="f3()">
+            <br>
+                <label>Grades</label>
+                <br>
+               
+             
+                <select id="grades" onmouseover="f4()" onmouseout="this.size=1;">
+                    <option>Select Your Grade</option>
+                    <option  value="Grade A">Grade A</option>
+                    <option value="Grade B">GradeB</option>
+                </select>
+                <br>
+                <br>
+
+          
+
+        
+                <input type="button" value="Save" onclick="f5()">
+            
+    </div>
+    <script src="practice-form.js"></script>
+</body>
+</html>

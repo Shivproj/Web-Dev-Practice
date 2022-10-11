@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Smart calc</h2>
+    <label>Input1:</label><input type="text" id="input1"><br>
+    <Label>Input2:</Label><input type="text" id="input2"><br>
+    <input type ="button" value="calculate" id="calculate" onmouseover="add()" onmouseout="sub()" onkeydown="mul()" onclick="div()"><br>
+    <Label>Result:</Label><input type="text" id="result">
+
+    <h2>Select your fav color</h2>
+
+
+    <select id="color" onchange="color()">
+        <option>Select your color</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+
+    </select>
+
+    <p id="p1"> simply dummy text of the printing and typesetting industry. lorem ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. it has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+    <button id="btn1"  onkeydown="cap()" onkeyup="small()">Capitalize</button>
+     <script src="index.js"></script>
+</body>
+</html>
