@@ -1,11 +1,13 @@
 //using event listener
-const btn = document.querySelector("#btn");
-btn.addEventListener("mouseover",clickMe);
+const ip1 = document.querySelector("#input1");
+ip1.addEventListener("input",data);
 
 
-function clickMe(){
-    console.log(Boolean(5<=2));
+function data(){
+    console.log(ip1.value);
 }
+
+
 
 
 
