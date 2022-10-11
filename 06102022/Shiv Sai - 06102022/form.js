@@ -14,20 +14,21 @@ function submit(){
     obj.Subject=CheckButton();    
     
     console.log(obj);
-    node.innerText="Congrats!";
-    let node2 = document.createElement("button");
+//     node.innerText="Congrats!";
+//     let node2 = document.createElement("button");
 
-    node2.setAttribute("id","btn2");
-    node2.innerHTML="Set more";
-    document.getElementById("btn2").style.background="green";
+//     node2.setAttribute("id","btn2");
+//     node2.innerHTML="Set more";
+//     document.getElementById("btn2").style.background="green";
 
-    document.body.appendChild(node2);
+//     document.body.appendChild(node2);
     
     
     
   
 
     
+// }
 }
 function CheckButton() {
     if(document.querySelector("#Maths").checked) return  "Maths";

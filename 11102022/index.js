@@ -104,7 +104,7 @@ magic.addEventListener("keydown", function f5() {
 
 let mark = document.querySelector("#marks");
 
-mark.addEventListener("input", calc);
+mark.addEventListener("change", calc);
 let box = document.createElement("input");
 document.querySelector("#calc").appendChild(box);
 box.id = "Final";
@@ -125,4 +125,7 @@ function calc() {
       document.querySelector("#Final").value = "D";
     }
   }
+
+  //60<score && score<90
 }
+
