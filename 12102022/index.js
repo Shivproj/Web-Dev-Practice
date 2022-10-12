@@ -89,11 +89,4 @@ function validate2() {
 }
 
 
-//Strings
-
-//Arrays
-let greetings = ["Hi","Hello","How are you"]
-greetings.shift();
-console.log(greetings);
-
 
