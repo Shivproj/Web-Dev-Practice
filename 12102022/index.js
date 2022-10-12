@@ -87,3 +87,13 @@ function validate2() {
     y.style.color = "red";
   }
 }
+
+
+//Strings
+
+//Arrays
+let greetings = ["Hi","Hello","How are you"]
+greetings.shift();
+console.log(greetings);
+
+
