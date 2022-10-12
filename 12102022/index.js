@@ -74,26 +74,31 @@ function calc() {
   counter++;
 }
 
-//Form validation with change
+//Form validation with change of input fields
+
+
 
 let fname = document.querySelector("#fname");
-fname.addEventListener("change",validate1)
+fname.addEventListener("blur",validate1)
 
 function validate1() {
   let fname  = document.querySelector("#fname").value 
   
   if(fname.length == 0) {
     
-    let x = document.createElement("p") 
+    
     x.innerText = "Please enter a name"
     add2.appendChild(x)
+    x.style.color="red";
 
-
+  }
+  else{
+    add2.removeChild(x);
   }
 
 }
 let lname = document.querySelector("#lname");
-lname.addEventListener("change",validate2)
+lname.addEventListener("blur",validate2)
 
 function validate2() {
  
@@ -103,6 +108,7 @@ function validate2() {
     let x = document.createElement("p") 
     x.innerText = "Please enter a name"
     add3.appendChild(x)
+    x.style.color="red";
 
 
   }
