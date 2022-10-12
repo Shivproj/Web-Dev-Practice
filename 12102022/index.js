@@ -5,7 +5,7 @@ document.querySelector("#physics").addEventListener("change",check)
 document.querySelector("#chemistry").addEventListener("change",check)
 
 function check() {
-  if (document.querySelector("#math").checked) return console.log("Maths")
+  if (document.querySelector("#math").checked)  console.log("Maths")
   else if (document.querySelector("#physics").checked) console.log("Physics")
   else console.log("Chemistry")
 }
@@ -73,3 +73,39 @@ function calc() {
   }
   counter++;
 }
+
+//Form validation with change
+
+let fname = document.querySelector("#fname");
+fname.addEventListener("change",validate1)
+
+function validate1() {
+  let fname  = document.querySelector("#fname").value 
+  
+  if(fname.length == 0) {
+    
+    let x = document.createElement("p") 
+    x.innerText = "Please enter a name"
+    add2.appendChild(x)
+
+
+  }
+
+}
+let lname = document.querySelector("#lname");
+lname.addEventListener("change",validate2)
+
+function validate2() {
+ 
+  let lname  = document.querySelector("#lname").value 
+  if(lname.length == 0) {
+    
+    let x = document.createElement("p") 
+    x.innerText = "Please enter a name"
+    add3.appendChild(x)
+
+
+  }
+
+}
+
