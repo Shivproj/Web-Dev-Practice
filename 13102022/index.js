@@ -20,3 +20,22 @@ arr.splice(3,0,"Shiv")//starting index, no of elements to be deleted, new elemen
 console.log(arr)
 arr.splice(3,2)// to delete 3rd element array.splice(2,1) splice can be used to delete as well
 console.log(arr)
+ join = arr.join(" and ") //Array join method with "and"
+console.log(join)
+
+
+//Object creation 11:15 AM
+
+let obj={};
+ obj.Name = "Shiv";
+console.log(obj.Name);//Access with property name 
+console.log(obj.age=3)// can be updated 
+console.log(obj)
+
+//Find method accepts function as a parameter - predicate 12:40 PM
+
+const item = a.find(function(item){
+
+    return 2==item.id;
+
+})
