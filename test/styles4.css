@@ -1,0 +1,33 @@
+.rounded{
+    margin-left:100px;
+    height:100px !important;
+    width:350px !important;
+    border-radius:40px !important;
+    
+    
+}
+.rounded-circle{
+    
+    height:200px !important;
+    width:200px !important;
+    margin-left:-500px;
+    z-index:2;
+    
+
+}
+.x{
+    z-index: -1;
+    margin-top:-50px;
+}
+.lt{
+    background-color:yellow !important;
+}
+.rt{
+    background-color:green !important;
+}
+.lb{
+    background-color:purple !important;
+}
+.rb{
+    background-color:lightblue !important;
+}

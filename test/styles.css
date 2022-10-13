@@ -1,0 +1,23 @@
+
+    
+
+.banner{
+    background-image:url(test-1.png);
+    background-repeat:no-repeat;
+    background-size : 100%;
+    background:cover;
+    height:1000000px;
+
+    color:white;
+
+
+}
+.txt{
+    margin-top:250px;
+    margin-left:100px;
+    
+
+}
+.btn{
+   margin-left:200px;
+}
