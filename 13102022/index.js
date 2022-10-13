@@ -16,5 +16,7 @@ console.log(str.slice(2,4))
 //Array Splice practice  at 10:50 AM
 
 const arr =[1,2,3,4];
-arr.splice(3,0,"Shiv")
+arr.splice(3,0,"Shiv")//starting index, no of elements to be deleted, new element
+console.log(arr)
+arr.splice(3,2)// to delete 3rd element array.splice(2,1) splice can be used to delete as wekk
 console.log(arr)
