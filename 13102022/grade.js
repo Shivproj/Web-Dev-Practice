@@ -92,3 +92,6 @@ function calc() {
 
 
 }
+students.forEach(function print(items){
+    console.log(items);
+})
