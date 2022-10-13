@@ -11,3 +11,10 @@ const str2 = str.toLowerCase().replace('s','f')
 console.log(str2);
 console.log(str.slice(2,4))
 //slice will take end index as inclusive.
+
+
+//Array Splice practice  at 10:50 AM
+
+const arr =[1,2,3,4];
+arr.splice(3,0,"Shiv")
+console.log(arr)
