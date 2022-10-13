@@ -1,59 +1,38 @@
-let students=[];
+let students = [];
 let btn1 = document.querySelector("#submit");
-btn1.addEventListener("click",getData)
+btn1.addEventListener("click", getData);
 
 function getData() {
-    let obj={};    
-    obj.FirstName= document.querySelector("#fname").value;
-    obj.LastName=document.querySelector("#lname").value;
+  let obj = {};
+  obj.FirstName = document.querySelector("#fname").value;
+  obj.LastName = document.querySelector("#lname").value;
 
-    students.push(obj);
+  students.push(obj);
 }
 
 let btn2 = document.querySelector("#display");
-btn2.addEventListener("click",showData)
+btn2.addEventListener("click", showData);
 function showData() {
-    console.log(students);
+  console.log(students);
 }
-
 
 let findx = document.querySelector("#find");
-findx.addEventListener("change",finds);
+findx.addEventListener("change", finds);
 
+function finds() {
+  let found = students.find(function (item) {
+    return findx.value == item.FirstName || findx.value == item.LastName;
+  });
 
-
-function finds(){
-    console.log(students.find(search));
-
-}
-
-
-
-function search(name){
-    if (findx.value==name.LastName || findx.value==name.FirstName) return name 
-    
-    
+  console.log(found);
 }
 
 let filterx = document.querySelector("#filter");
-filterx.addEventListener("change",filters);
+filterx.addEventListener("change", filters);
+function filters() {
+  let filtered = students.filter(function (item) {
+    return item.FirstName == "Sai" || item.LastName == "Sai";
+  });
 
-
-
-function filters(){
-    console.log(students.filter(searchs));
-
+  console.log(filtered);
 }
-
-
-
-function searchs(name){
-    if (filterx.value==name.LastName || filterx.value==name.FirstName) return name 
-    
-    
-}
-
-
-
-
-
