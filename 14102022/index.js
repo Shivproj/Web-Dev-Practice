@@ -37,7 +37,6 @@ function filters() {
   console.log(filtered);
 }
 function forEachs() {
-    
   arr.forEach(function (item) {
     if (item.Age > 19) console.log(item);
   });
