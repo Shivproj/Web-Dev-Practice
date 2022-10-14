@@ -42,7 +42,7 @@ function filter(){
 }
 function forEach(){
     cars.forEach(function(item){
-        if(item.Fuel=="Petrol") console.log(item);
+        if(item.Fuel=="Diesel") console.log(item);
 
     })
 
