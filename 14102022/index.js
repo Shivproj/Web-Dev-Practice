@@ -1,4 +1,4 @@
-arr = [];
+const arr = [];
 let btn1 = document.querySelector("#submit");
 btn1.addEventListener("click", submit);
 let btn2 = document.querySelector("#display");
@@ -16,6 +16,7 @@ function submit() {
   obj.Name = document.querySelector("#name").value;
   obj.Age = document.querySelector("#age").value;
   obj.Email = document.querySelector("#email").value;
+  obj.Grade=document.querySelector("#grade").value;
   obj.Marks = document.querySelector("#marks").value;
 
   arr.push(obj);
