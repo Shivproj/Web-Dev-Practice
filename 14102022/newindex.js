@@ -9,6 +9,9 @@ btn4.addEventListener("click",filter);
 btn5 = document.querySelector("#forEach");
 btn5.addEventListener("click",forEach);
 
+let btn6 = document.querySelector("#map");
+btn6.addEventListener("click",map);
+
 
 let cars=[];
 
@@ -47,4 +50,17 @@ function forEach(){
     })
 
 }
+function map(){
+    let data = cars.map(function(item){
+        return item;
+        
+        
+    })
+   
 
+    let data1 = data.filter(function(item){
+        return item.Model=="A4";
+    })
+    console.log(data1);
+    
+}
