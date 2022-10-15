@@ -51,13 +51,11 @@ function forEach(){
 
 }
 function map(){
-    let data = cars.map(function(item){
+    let data = cars.map(function (item)
+    {
         return item;
-        
-        
     })
-   
-
+    
     let data1 = data.filter(function(item){
         return item.Model=="A4";
     })
