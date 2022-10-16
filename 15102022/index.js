@@ -27,3 +27,15 @@ else return "Composite";
 }
 
 
+let arr =[{Name: "Prime",Age:2},{Lname: "Composite",DAY:7}]
+
+  for( i=0;i<=5;i++){
+    for(j=0;j<i;j++){
+        console.log("*");
+        
+    }
+    console.log("\n")
+    
+}
+
+
