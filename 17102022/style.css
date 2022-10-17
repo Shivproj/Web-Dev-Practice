@@ -1,0 +1,26 @@
+.form-item input {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+
+
+}
+
+.form-item {
+    display: grid;
+}
+
+.form-item button {
+    width: 300px;
+    padding: 10px;
+    border-radius: 10px;
+
+
+
+}
+
+.error-message {
+    color: red;
+}
