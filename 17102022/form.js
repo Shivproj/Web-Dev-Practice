@@ -1,3 +1,5 @@
+document.designMode = 'on';
+
 sub = document.querySelector("#submit");
 sub.addEventListener("click",onSubmit);
 let count =0;
