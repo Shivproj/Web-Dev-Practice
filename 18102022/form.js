@@ -1,11 +1,11 @@
 sub = document.querySelector("#submit");
 sub.addEventListener("click", onSubmit);
-ele = document.querySelector("#ele1");
-ele.addEventListener("input", onInput1);
-ele = document.querySelector("#ele2");
-ele.addEventListener("input", onInput2);
-ele = document.querySelector("#ele3");
-ele.addEventListener("input", onInput3);
+ele1 = document.querySelector("#ele1");
+ele1.addEventListener("input", onInput1);
+ele2 = document.querySelector("#ele2");
+ele2.addEventListener("input", onInput2);
+ele3 = document.querySelector("#ele3");
+ele3.addEventListener("input", onInput3);
 function onInput1() {
   if (document.querySelector("#ele1").value)
     document.querySelector("#name").hidden = true;
@@ -19,6 +19,33 @@ function onInput3() {
   if (document.querySelector("#ele3").value)
     document.querySelector("#email").hidden = true;
 }
+
+function validatePhone(ph) {
+  isValid = true;
+  message = "";
+  let x = ph.charAt(0);
+  let special = "!@#$%^&*()_+-=";
+
+  if (!ph) {
+    isValid = false;
+    message = "is Required";
+  } 
+  else if(x.startsWith("0")){
+    isValid = false;
+    message="Phone number must not start with 0";
+  }  
+  else if (ph.length != 10) {
+    isValid = false;
+    message = "Phone number must be of length 10 ";
+  }
+  else if (isNaN(ph) || special.includes(x)) {
+    isValid = false;
+    message = "Please enter a number";
+  } 
+
+  return { isValid, message };
+}
+
 
 function validateEmail(email) {
   isValid = true;
@@ -40,26 +67,6 @@ function validateEmail(email) {
   } else if (len - num < 3) {
     isValid = false;
     message = "not valid domain name";
-  }
-
-  return { isValid, message };
-}
-
-function validatePhone(ph) {
-  isValid = true;
-  message = "";
-  let x = ph.charAt(0);
-  let special = "!@#$%^&*()_+-=";
-
-  if (!ph) {
-    isValid = false;
-    message = "is Required";
-  } else if (isNaN(ph) || special.includes(x)) {
-    isValid = false;
-    message = "Please enter a number";
-  } else if (ph.length != 10) {
-    isValid = false;
-    message = "Phone number must be of length 10 ";
   }
 
   return { isValid, message };
