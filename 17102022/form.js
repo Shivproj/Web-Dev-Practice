@@ -1,4 +1,4 @@
-document.designMode = 'on';
+document.designMode = 'off';
 
 sub = document.querySelector("#submit");
 sub.addEventListener("click",onSubmit);
@@ -23,6 +23,7 @@ function onInput3() {
      if(document.querySelector("#ele3").value) document.querySelector("#email").hidden=true; 
     }
         
+  
 
 
 function onSubmit() {
@@ -43,6 +44,7 @@ else if(!phone) {
     document.querySelector("#phone").hidden = false;
     return;
 }
+
 else if (!email) {
     document.querySelector("#email").hidden = false;
     return;

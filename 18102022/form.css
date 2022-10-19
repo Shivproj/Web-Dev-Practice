@@ -1,0 +1,21 @@
+.form-item{
+    padding:10px;
+    margin:10px;
+
+
+}
+.form-item input{
+    border-radius:10px;
+    width: 300px;
+    padding:10px;
+
+}
+button{
+    border-radius:10px;
+    margin-left:65px;
+    width:300px;
+    height:39.33px;
+}
+.form-item span{
+    color:red;
+}
