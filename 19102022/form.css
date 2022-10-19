@@ -1,0 +1,22 @@
+.form{
+    display:flex;
+}
+.error{
+    color:red;
+}
+.form-elements input{
+    border-radius:10px;
+    width:300px;
+    margin:10px;
+    height:30px;
+    padding:10px;
+}
+.form-elements select{
+    margin:10px;
+    height:30px;
+}
+button{
+    margin:10px;
+    height:30px;
+    width:250px;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Registration Form 2.0</h2>
+    <form class="flex" name="registration">
+        <div class="form-elements">
+            <label>Name</label>
+            <input type="text" name="name">
+            <span class="error" hidden id="name">is Required</span>
+        </div>
+        <div class="form-elements">
+            <label>Qualification</label>
+            <select name="select">
+                <option>Choose your Qualification</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="Matriculation">Matriculation</option>
+                <option value="Masters">Masters</option> </select>
+                <span class="error" hidden id="selectquali">is Required</span>
+           
+        </div>
+        <div class="form-elements">
+            <label>Age</label>
+            <input type="text" name="age">
+            <span class="error" hidden id="age">is Required</span>
+
+        </div>
+        <div class="form-elements">
+            <label>Gender</label>
+            <input type="radio" name="gender" value="male"><span>Male</span>
+            <input type="radio" name="gender" value="female"><span>Female</span>
+            <span class="error" hidden id="gender">is Required</span>
+
+        </div>
+        <button type="button" id="submit">Submit</button>
+    </form>
+
+    <script src="form.js"></script>
+</body>
+
+</html>
