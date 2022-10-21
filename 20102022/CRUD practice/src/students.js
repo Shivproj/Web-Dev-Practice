@@ -1,7 +1,7 @@
 document.querySelector("#students").addEventListener("click", display);
 
 
-
+display();
 function display() {
   function pushStudents() {
     students.forEach(pushStudent);

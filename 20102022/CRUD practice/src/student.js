@@ -3,6 +3,7 @@ data.addEventListener("change",search);
 
 
 function search(){
+    display();
     let info = data.value;
     
     x=[];
