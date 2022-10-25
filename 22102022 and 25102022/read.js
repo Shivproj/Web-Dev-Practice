@@ -1,7 +1,11 @@
 document.querySelector("#read").addEventListener("click", readFlowers);
-let selectedIds = [];
+let selectedIds=[];
 function readFlowers() {
+  selectedIds = [];
+  
+  isEdit = false;
   template = ` <button type="button" id = "delete"class="btn btn-danger">Delete</button>
+  <button type="button" id = "update" class="btn btn-danger">Update</button>
   <table>
     <thead><tr><th>Select</th><th>Sepal Length</th><th>Sepal Width</th><th>Petal Length </th><th>Petal Width</th><th>Species</th></tr><thead>
     <tbody>       
@@ -13,12 +17,13 @@ function readFlowers() {
   let checkBoxList = document
     .querySelector("tbody")
     .querySelectorAll(".checkbox");
-    console.log(checkBoxList);
+  
   
   checkBoxList.forEach(function (checkBox) {
     checkBox.addEventListener("change", onSelection);
   });
   document.querySelector("#delete").addEventListener("click", deleteFunction);
+  document.querySelector("#update").addEventListener("click",updateFlower);
 }
 
 function readFlower(flower) {
@@ -47,24 +52,6 @@ function onSelection(event) {
   
 
 }
-function deleteFunction(){
-    debugger
-    if (selectedIds.length === 0 || selectedIds.length > 1) {
-        alert("Please selecte one flower");
-      }  else {
-        const result = confirm("Are you sure ? do you really want to delete ?");
-        if (result) {
-          const idx = flowers.findIndex(function (item) {    
-            console.log(typeof selectedIds[0])       
-            return item.ID == selectedIds[0];
-          });
-          flowers.splice(idx, 1);
-          selectedIds = [];
-          readFlowers();
-        }
-      }
-}
+readFlowers();
 
-// readFlowers();
-
-// document.querySelector("#create").addEventListener("click", createFlower);
+document.querySelector("#create").addEventListener("click", createFlower);
