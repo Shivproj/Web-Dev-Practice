@@ -29,10 +29,13 @@ function readFlowers() {
 
 function readFlower(flower) {
   template = `<tr>
-        <td><input type="checkbox" class="checkbox" id="${flower.id}" ></td>
-        <td>${flower.name}</td>
-        <td>${flower.username}</td>
-        <td>${flower.email}</td>
+        <td><input type="checkbox" class="checkbox" id="${flower.ID}" ></td>
+        <td>${flower.sepalLength}</td>
+        <td>${flower.sepalWidth}</td>
+        <td>${flower.petalLength}</td>
+        <td>${flower.petalWidth}</td>
+        <td>${flower.species}</td>
+        
                
     </tr>`;
 
