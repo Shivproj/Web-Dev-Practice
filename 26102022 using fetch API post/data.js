@@ -1,5 +1,34 @@
 let flowers = [];
-fetch('https://jsonplaceholder.typicode.com/posts',{method:'GET'}).then(function(response){ return response.json()}).then(function (response){ return flowers=response})
+function loadData(callback){
+fetch('http://127.0.0.1:5501/db/data.json',{method:'GET'}).then(function(response){ return response.json()}).then(function (response){  flowers=response;callback();})}
+
+
+// let promise = new Promise(function(resolve,reject){
+//     setTimeout(function(){
+//         resolve("Success")
+
+//     },5000)
+// });
+// promise.then(function(response)
+// {
+//     console.log(response)
+// },function (err){
+//     console.log(err);
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // fetch('https://jsonplaceholder.typicode.com/posts', {
 //   method: 'POST',
 //   body: JSON.stringify({

@@ -5,7 +5,7 @@ function readFlowers() {
   isEdit = false;
   template = ` <button type="button" id = "delete"class="btn btn-danger">Delete</button>
   <button type="button" id = "update" class="btn btn-danger">Update</button>
-  <table>
+  <table cellspacing="10" cellpadding="10">
     <thead><tr><th>Select</th><th>Sepal Length</th><th>Sepal Width</th><th>Petal Length </th><th>Petal Width</th><th>Species</th></tr><thead>
     <tbody>       
 
@@ -27,10 +27,11 @@ function readFlowers() {
 function readFlower(flower) {
   template = `<tr>
         <td><input type="checkbox" class="checkbox" id="${flower.ID}" ></td>
-        <td>${flower.userId}</td>
-        <td>${flower.id}</td>
-        <td>${flower.title}</td>
-        <td>${flower.body}</td>
+        <td>${flower.sepalLength}</td>
+        <td>${flower.sepalWidth}</td>
+        <td>${flower.petalLength}</td>
+        <td>${flower.petalWidth}</td>
+        <td>${flower.species}</td>
        
         
                
