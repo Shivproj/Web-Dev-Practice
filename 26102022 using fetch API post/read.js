@@ -1,3 +1,5 @@
+document.querySelector("#load").addEventListener("click", readFlowers);
+
 let selectedIds = [];
 function readFlowers() {
   selectedIds = [];
@@ -27,6 +29,7 @@ function readFlowers() {
 function readFlower(flower) {
   template = `<tr>
         <td><input type="checkbox" class="checkbox" id="${flower.ID}" ></td>
+        <td>${flower.ID}</td>
         <td>${flower.sepalLength}</td>
         <td>${flower.sepalWidth}</td>
         <td>${flower.petalLength}</td>
@@ -49,5 +52,5 @@ function onSelection(event) {
   }
 }
 
-loadData(readFlowers);
+
 document.querySelector("#create").addEventListener("click", createFlower);
