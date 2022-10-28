@@ -4,7 +4,6 @@ create table cars(
 VIN  uniqueIdentifier,
 Brand varchar(20),
 Model nvarchar(20),
-
 )
 
 insert into cars (VIN,Brand,Model) 
@@ -14,7 +13,6 @@ values
 (newId(),'Mercedes','E420'),
 (newId(),'Ferrari','458 Pista'),
 (newId(),'Aston Martin','Valk')
-
 
 select * from cars
 
@@ -54,7 +52,7 @@ weight decimal,
 
 
 
-insert into dummy (name,age,contact,salary,currency,weight) values ('Shiv Sai',20,8247057536,75000000.50,78.22,80.10),('Shiv Sai',20,8247057536,75000000.50,78.22,80.10)
+insert into dummy (name,age,contact,salary,currency,weight) values ('Shiv Sai',20,8247057536,75000000.50,78.22,80.10),('Shiv Sai',20,8247057536,75000000.50,78.22,80.10),('Sai',30,8247057536,75000000.50,78.12,81.10)
 
 select * from dummy
 
@@ -63,10 +61,19 @@ delete  from dummy
 drop table dummy
 
 
+-- Table number 4 to explore GETDATE() method
+create table dates (
+day varchar(20),
+type1 date,type2 datetime,type3 datetime2)
 
+insert into dates values ('Monday',GETDATE(),GETDATE(),GETDATE())
+insert into dates values ('Tuesday',GETDATE(),GETDATE(),GETDATE())
+insert into dates values ('Wednesday',GETDATE(),GETDATE(),GETDATE())
+ 
+select * from dates
 
-
-
+truncate table dates 
+-- use truncate to delete
 
 
 
