@@ -27,7 +27,38 @@ alter table cars alter column TOPSPEED decimal(20,4)
 
 select * from cars
 
---Practice 
+--Practice  for 28102022
+drop table students
+create table students(
+    FirstName varchar(50),
+    LastName varchar(50),
+    Age int,
+    Contact bigint,
+    email nvarchar(255),
+    address nvarchar(255),
+    height decimal(10,2),
+    weight decimal(10,2),
+    entry_time datetime2
+)
+select * from students
+
+insert into students(FirstName, LastName, Age, Contact, email,address,height,weight,entry_time) 
+values
+('Shiv Sai','Indrakanti',20,8247057536,'shivindrakanti@gmail.com','S.R.Nagar',172.2,79.5,getDate())
+
+alter table students add salary bigint 
+
+update students set salary = 5500000 where height =  172.2
+
+alter table students drop column weight
+
+
+
+
+
+
+
+
 
 
 
