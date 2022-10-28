@@ -1,33 +1,33 @@
-let day = new Date()
-let x = day.getDay();
-console.log(x);
+let day = new Date().getDay();
+
+console.log(day);
 switch (day) {
   case "Monday": {
-    console.log(1)
+    console.log("Monday")
     break;
   }
   case "Tuesday": {
-    console.log(2)
+    console.log("Tuesday")
     break;
   }
   case "Wednesday": {
-    console.log(3)
+    console.log("Wednesday")
     break;
   }
   case "Thursday": {
-    console.log(4)
+    console.log("Thursday")
     break;
   }
   case "Friday": {
-    console.log(5)
+    console.log("Friday")
     break;
   }
   case "Saturday": {
-    console.log(6)
+    console.log("Saturday")
     break;
   }
   case "Sunday": {
-    console.log(7)
+    console.log("Sunday")
     break;
   }
 }
