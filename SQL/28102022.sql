@@ -42,15 +42,40 @@ create table students(
 )
 select * from students
 
-insert into students(FirstName, LastName, Age, Contact, email,address,height,weight,entry_time) 
+insert into students(FirstName, LastName, Age, Contact, email,address,height,entry_time) 
 values
-('Shiv Sai','Indrakanti',20,8247057536,'shivindrakanti@gmail.com','S.R.Nagar',172.2,79.5,getDate())
+('Shiv Sai','Indrakanti',20,8247057536,'shivindrakanti@gmail.com','S.R.Nagar',172.2,getDate())
 
 alter table students add salary bigint 
 
 update students set salary = 5500000 where height =  172.2
 
 alter table students drop column weight
+
+alter table students alter column salary decimal(10,3)
+
+
+
+create schema student
+
+create table student.std1 (
+Name varchar(50),
+Age int
+)
+
+create table student.std2(
+Name varchar(50),
+Age int
+)
+
+
+select * from student.std1
+select * from student.std2
+insert into student.std1 (Name,Age) values ('Shiv Sai',20)
+insert into student.std2 (Name,Age) values ('Sai Sai',21)
+
+
+
 
 
 
