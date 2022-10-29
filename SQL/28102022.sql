@@ -54,6 +54,7 @@ alter table students drop column weight
 
 alter table students alter column salary decimal(10,3)
 
+--Creating a new schema
 
 
 create schema student

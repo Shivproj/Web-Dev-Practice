@@ -39,43 +39,6 @@ function createFlower() {
 }
 
 function submit() {
-  const form = document.forms["create"];
-  const sepalLength = form.sepalLength.value;
-  const sepalWidth = form.sepalWidth.value;
-  const petalLength = form.petalLength.value;
-  const petalWidth = form.petalWidth.value;
-  const species = form.species.value;
-  let id;
-  if (isEdit) {
-    id = flowers.findIndex(function (item) {
-      return item.ID == selectedIds[0];
-    });
-  } else {
-    id = flowers.length + 1;
-  }
-
-  console.log(id);
-
-  let obj = {
-    ID: id,
-    sepalLength: sepalLength,
-    sepalWidth: sepalWidth,
-    petalLength: petalLength,
-    petalWidth: petalWidth,
-    species: species,
-  };
-
-  if (!isEdit) {
-    flowers.push(obj);
-    readFlowers();
-  } else {
-    flowers[id] = obj;
-
-    readFlowers();
-  }
-
-  //Validations
-
   function valiadteSepalLength(len) {
     isValid: true;
     message = "";
@@ -116,4 +79,44 @@ function submit() {
       message: "is Required";
     }
   }
-}
+
+
+
+  const form = document.forms["create"];
+  const sepalLength = form.sepalLength.value;
+  const sepalWidth = form.sepalWidth.value;
+  const petalLength = form.petalLength.value;
+  const petalWidth = form.petalWidth.value;
+  const species = form.species.value;
+  let id;
+  if (isEdit) {
+    id = flowers.findIndex(function (item) {
+      return item.ID == selectedIds[0];
+    });
+  } else {
+    id = flowers.length + 1;
+  }
+
+  console.log(id);
+
+  let obj = {
+    ID: id,
+    sepalLength: sepalLength,
+    sepalWidth: sepalWidth,
+    petalLength: petalLength,
+    petalWidth: petalWidth,
+    species: species,
+  };
+
+  if (!isEdit) {
+    flowers.push(obj);
+    readFlowers();
+  } else {
+    flowers[id] = obj;
+
+    readFlowers();
+  }
+
+  //Validations
+
+  }
