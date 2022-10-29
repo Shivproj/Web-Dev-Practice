@@ -22,7 +22,6 @@ update cars set topspeed= 200 where brand ='Jaguar'
 
 select Brand,Model,TOpspeed from cars where topspeed >300.0000
 
-
 alter table cars alter column TOPSPEED decimal(20,4)
 
 select * from cars
