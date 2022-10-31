@@ -3,6 +3,7 @@
 
 --Constraints
 --1)Not Null
+--practice 31102022
 --Table 1
 create table bikes
 (
@@ -58,7 +59,7 @@ select * from flipkart
 select * from flipkart order by quantity DESC
 
 
-create table 
+
 
 
 

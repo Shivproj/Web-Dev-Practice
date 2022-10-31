@@ -1,3 +1,4 @@
+--28102022 practice
 update cars Set brand='Aston Martin Racing',model='Vantage' where VIN='1E327FE1-4056-49C8-A3A6-E1D6F1FBAF23'
 
 select * from cars
