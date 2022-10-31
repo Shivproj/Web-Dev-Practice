@@ -117,12 +117,16 @@ update Students.marks set id='39CDD413-5A3F-429E-B735-3CC63ACE43F1' where id ='3
 
 alter table Students.details add  email  nvarchar(20) 
 select * from Students.details
+select * from Students.marks
+
 
 
 alter table Students.marks drop constraint fk_studentdetails_id
 alter table Students.marks add constraint fk_studentdetails_id foreign key (id) references Students.details(id)
 
+  sp_rename 'dbo.developers.Role', 'ROLE';
 
+  sp_rename 'dbo.developers', 'DEVELOPERS';
 
 
 
