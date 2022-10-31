@@ -75,6 +75,9 @@ English int
 constraint fk_studentdetails_id foreign key (id) references Students.details(id)
 
 )
+
+
+
 select * from Students.details
 Select * from Students.marks
 
@@ -109,11 +112,15 @@ update Students.details set id=NEWiD() where id ='3FB187EA-459D-41F6-8AE3-22FB84
 update Students.marks set id='39CDD413-5A3F-429E-B735-3CC63ACE43F1' where id ='3FB187EA-459D-41F6-8AE3-22FB84E420B3'
 
 
-alter table Students.details drop constraint pk_studentdetails
+
 
 
 alter table Students.details add  email  nvarchar(20) 
 select * from Students.details
+
+
+alter table Students.marks drop constraint fk_studentdetails_id
+alter table Students.marks add constraint fk_studentdetails_id foreign key (id) references Students.details(id)
 
 
 
