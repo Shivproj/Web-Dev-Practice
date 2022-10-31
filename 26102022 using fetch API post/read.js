@@ -8,7 +8,7 @@ function readFlowers() {
   template = ` <button type="button" id = "delete"class="btn btn-danger">Delete</button>
   <button type="button" id = "update" class="btn btn-danger">Update</button>
   <table cellspacing="10" cellpadding="10">
-    <thead><tr><th>Select</th><th>Sepal Length</th><th>Sepal Width</th><th>Petal Length </th><th>Petal Width</th><th>Species</th></tr><thead>
+    <thead><tr><th>Select</th><th>S.No</th><th>Sepal Length</th><th>Sepal Width</th><th>Petal Length </th><th>Petal Width</th><th>Species</th></tr><thead>
     <tbody>       
 
     </tbody>
