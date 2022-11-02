@@ -44,10 +44,10 @@ function circle() {
 
 let x;
 function getRadius(){
-fetch("http://www.randomnumberapi.com/api/v1.0/random?min=1&max=500&count=1",{ method:"GET"}).then(function(response) {return response.json()}
+fetch("http://www.randomnumberapi.com/api/v1.0/random?min=100&max=500&count=1",{ method:"GET"}).then(function(response) {return response.json()}
 ).then(function(res) {
 
 return x = res[0]});
-return x/5;
+return x;
 }
 setInterval(circle,1000);
