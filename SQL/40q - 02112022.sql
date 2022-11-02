@@ -73,8 +73,8 @@ select *,Name + Industry as Concat from practice.company
 --Same for q10 to q16
 
 --Ques.16. Write an SQL query to fetch the employee full names and replace the space with ‘-’.
---Modification replace comany name
-select Replace(Name,'','-') from practice.company -- not working
+--Modification replace comany industry
+select Replace(Industry,' ','-') from practice.company 
 
 
 --Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
