@@ -111,3 +111,6 @@ select top 1  * from practice.company order by budget desc
 
 --Ques.40. Write SQL query to find the 3rd highest salary from a table without using the TOP/limit keyword.
 --Do not know how to do this
+
+
+-- Testing group by select Location,RegId,Industry,Name from practice.company group by industry,Name,RegId,Location 
