@@ -28,4 +28,8 @@ select brand,year,model,cost,cost-2000 as DiscountedPrice from practice.cars
 select * ,brand+ ' ' + model as brandmodel  from  practice.cars
 
 
+--try =,!=,<,> 
+
+select * from practice.cars where  brand>='Maruti'
+
 
