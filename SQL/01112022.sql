@@ -186,3 +186,8 @@ insert into constraints.Studentmarks values(newId(),'b0b16b5c-7999-491e-8be9-e15
 insert into constraints.Studentmarks values (newId(),'fd5fca96-04aa-422a-9a70-ea7f94c2122d',76,67,71)
 
 select * from constraints.Studentmarks
+
+
+
+
+
