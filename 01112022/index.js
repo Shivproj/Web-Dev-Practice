@@ -30,24 +30,24 @@
 // const inp = document.querySelector("#input");
 // inp.addEventListener("input", circle);
 
+
+
+
+
 function circle() {
+  console.log(getRadius());
   document.querySelector("#circle").style.height = getRadius() + "px";
   document.querySelector("#circle").style.width = getRadius() + "px";
 }
 
-// function getRadius() {
-  
-//   radius = inp.value;
-//   return radius;
-// }
 
 
 let x;
 function getRadius(){
-fetch("http://www.randomnumberapi.com/api/v1.0/random?min=1&max=100&count=1",{ method:"GET"}).then(function(response) {return response.json()}
+fetch("http://www.randomnumberapi.com/api/v1.0/random?min=1&max=500&count=1",{ method:"GET"}).then(function(response) {return response.json()}
 ).then(function(res) {
 
 return x = res[0]});
-console.log(x);
+return x/5;
 }
-setInterval(getRadius,1000);
+setInterval(circle,1000);

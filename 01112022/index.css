@@ -1,8 +1,8 @@
-input{
-    margin-bottom : 200px;
-}
-#circle{   
+
+#circle{  
+    margin:100px; 
     border: 1px solid;
     border-radius: 50%;
+    background-image: linear-gradient(to right, blue , purple);
     
 }
