@@ -53,6 +53,7 @@ select * from practice.company where budget>=45000000 and budget<=150000000 orde
 --Method 2
 select * from practice.company where budget between 45000000 and 150000000
 
+
 --Ques.6. Write an SQL query to fetch those employees who live in Toronto and work under manager with ManagerId – 321.
 --Modification I am making sure location is california and  industry is big tech
 select * from practice.company where location = 'California' and Industry = 'Big Tech'
@@ -68,28 +69,70 @@ select * from practice.company where location != 'California'
 --Modification I am concat'ing two columns 
 select *,Name + Industry as Concat from practice.company
 --Ques10. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ending with any sequence of characters.
---(Has not been taught yet)
 
---Same for q10 to q16
+select * from practice.company where Name like '_pp%' --One underscore for one letter 
+
+
+-- Same for q11 to q15
+
+--Ques.11 Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
+--I am using joins.Students and joins.Student details
+select Id from joins.Students union select studentid from joins.StudentDetails
+
+--Ques.12 Write an SQL query to fetch common records between two tables.
+select * from joins.StudentDetails intersect select * from joins.Students
+--Does not work with my tables
+
+--Ques.13. Write an SQL query to fetch records that are present in one table but not in another table.
+select * from joins.StudentDetails minus select * from joins.Students
+--Q14 and Q15 Subquery
 
 --Ques.16. Write an SQL query to fetch the employee full names and replace the space with ‘-’.
 --Modification replace comany industry
 select Replace(Industry,' ','-') from practice.company 
 
+--Ques.17. Write an SQL query to fetch the position of a given character(s) in a field.Did not get
 
 --Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
+
 --Modification  I am concat'ing two columns 
 select *,Name + Industry as Concat from practice.company
+--Q19.Write a query to fetch only the first name(string before space) from the FullName column of the EmployeeDetails table.
+-- I am using it after the ID as it includes 'A'
+select substring(Id,2,len(ID)) as ID from joins.Students
 
 --Ques.20. Write an SQL query to upper case the name of the employee and lower case the city values.
 --Modification upper casing name lower caisng industry
 select upper(Name)as Name,lower(Industry) as Industry from practice.company
---Q21,q22,Q23 not done
+--Q21 
+select name,len(name)-len(replace(name,'a','')) as  [number of a's] from joins.Students
+--Q22
+update joins.Students set name=ltrim(rtrim(name)) 
+select * from joins.Students
+--Q23 Fetch all the employees who are not working on any project.
+select * from joins.Students A LEFT join joins.StudentDetails B ON A.id = B.StudentId where B.Id is Null
 --Ques.24. Write an SQL query to fetch employee names having a budget greater than or equal to 9000000  and less than or equal to 9000000.
 select name from practice.company where Budget>=9000000 and Budget<=150000000
 
 --Question.25 Write an SQL query to find the current date-time.
 SELECT getdate() as [Date and Time]
+--Ques.26. Write an SQL query to fetch all the Employees details from EmployeeDetails table who joined in the Year 2020.
+select * from practice.cars where year = 2020
+--Ques.27. Write an SQL query to fetch all employee records from EmployeeDetails table who have a salary record in EmployeeSalary table.
+select * from joins.Students as A INNER join joins.StudentDetails as B on A.Id=B.StudentId
+--Ques.28. Write an SQL query to fetch project-wise count of employees sorted by project’s count in descending order.
+select year,count(*) as count from practice.cars  group by Year order by count desc
+select * from practice.cars
+--Ques.29. Write a query to fetch employee names and salary records. Display the employee details even if the salary record is not present for the employee.
+select * from joins.Students A right join  joins.StudentDetails B on A.Id=B.StudentId
+--Ques.30. Write an SQL query to join 3 tables.
+select * from joins.Students A inner join joins.StudentDetails B on A.Id=B.StudentId  inner join PRACTICE.students as C on B.age=C.age
+
+select * from practice.students
+--Ques.32.Write an SQL query to fetch duplicate records from EmployeeDetails (without considering the primary key – EmpId).
+select * from practice.cars
+select count(year) as Count from practice.cars group by year having count(*)>1
+
 --Ques.34. Write an SQL query to fetch only odd rows from the table.
 --Did not get solution as my table does not have a num based ID
 --Ques.36. Write an SQL query to create a new table with data and structure copied from another table.
@@ -114,3 +157,6 @@ select top 1  * from practice.company order by budget desc
 
 
 -- Testing group by select Location,RegId,Industry,Name from practice.company group by industry,Name,RegId,Location 
+select Industry from practice.company
+select distinct Industry from practice.company
+select distinct * FROM practice.company 
