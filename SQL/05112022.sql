@@ -1,4 +1,4 @@
-
+--05112022 practice
 --Inner Join syntax
 
 select Name,Maths,Physics,Chemistry

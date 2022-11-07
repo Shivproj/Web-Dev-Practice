@@ -1,3 +1,4 @@
+--Practice 02112022
 select * from practice.students where Age>22
 select * from practice.cars where topspeed>250
 select * from practice.sales

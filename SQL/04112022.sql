@@ -1,3 +1,4 @@
+--04112022
 --clauses and operators continued
 select * from practice.cars where topspeed=320 or topspeed=245
 

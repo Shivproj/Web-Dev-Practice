@@ -1,4 +1,4 @@
-
+--work assigned on 02112022
 -- the 40 questions 
 
 
@@ -73,7 +73,7 @@ select *,Name + Industry as Concat from practice.company
 select * from practice.company where Name like '_pp%' --One underscore for one letter 
 
 
--- Same for q11 to q15
+
 
 --Ques.11 Write an SQL query to fetch all the EmpIds which are present in either of the tables – ‘EmployeeDetails’ and ‘EmployeeSalary’.
 --I am using joins.Students and joins.Student details
@@ -160,3 +160,4 @@ select top 1  * from practice.company order by budget desc
 select Industry from practice.company
 select distinct Industry from practice.company
 select distinct * FROM practice.company 
+--14 15 31 35 left
