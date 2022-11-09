@@ -41,6 +41,7 @@ select  distinct(Industry)   from practice.company
 --Modification for my table I am checking for companies working in the big tech sector
 
 select * from practice.company where Industry = 'Big Tech'
+select count(*),Industry  from practice.company group by industry  having Industry = 'Big Tech'
 
 --Ques.4. Write an SQL query to find the maximum, minimum, and average salary of the employees.
 --Modification for my table I am calculating average ,sum , max , min related to salaries
@@ -67,7 +68,7 @@ select * from practice.company where location = 'California' OR Industry = 'Big 
 select * from practice.company where location != 'California'
 --Ques.9. Write an SQL query to display the total salary of each employee adding the Salary with Variable value.
 --Modification I am concat'ing two columns 
-select *,Name + Industry as Concat from practice.company
+select *,budget + 200000 as hike from practice.company
 --Ques10. Write an SQL query to fetch the employees whose name begins with any two characters, followed by a text “hn” and ending with any sequence of characters.
 
 select * from practice.company where Name like '_pp%' --One underscore for one letter 
@@ -85,13 +86,22 @@ select * from joins.StudentDetails intersect select * from joins.Students
 
 --Ques.13. Write an SQL query to fetch records that are present in one table but not in another table.
 select * from joins.StudentDetails minus select * from joins.Students
---Q14 and Q15 Subquery
+--Ques. 14 Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
+select * from joins.Students
+select * from joins.StudentDetails
+select Id from joins.Students WHERE ID in (select StudentId FROM JOINS.StudentDetails)
 
+
+-- Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
+
+select * from joins.StudentDetails WHERE Id not  in(select  studentid from joins.StudentDetails)
 --Ques.16. Write an SQL query to fetch the employee full names and replace the space with ‘-’.
 --Modification replace comany industry
-select Replace(Industry,' ','-') from practice.company 
+select Industry , Replace(Industry,' ','-') as formatted from practice.company 
 
 --Ques.17. Write an SQL query to fetch the position of a given character(s) in a field.Did not get
+
+Select Name,charIndex('A',Name,0) from practice.company
 
 --Ques.18. Write an SQL query to display both the EmpId and ManagerId together.
 
@@ -160,4 +170,9 @@ select top 1  * from practice.company order by budget desc
 select Industry from practice.company
 select distinct Industry from practice.company
 select distinct * FROM practice.company 
---14 15 31 35 left
+--14 15 31 34 35 left
+--14 Write an SQL query to fetch the EmpIds that are present in both the tables –   ‘EmployeeDetails’ and ‘EmployeeSalary.
+--15 Ques.15. Write an SQL query to fetch the EmpIds that are present in EmployeeDetails but not in EmployeeSalary.
+--31 Ques. 31. Write an SQL query to fetch all the Employees who are also managers from the EmployeeDetails table.
+--34 Ques.34. Write an SQL query to fetch only odd rows from the table.
+--35 Ques.35. Write an SQL query to fetch only even rows from the table.

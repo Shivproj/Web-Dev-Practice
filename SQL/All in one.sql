@@ -1016,7 +1016,25 @@ from practice.company
 order by budget desc
 
 --Ques.40. Write SQL query to find the 3rd highest salary from a table without using the TOP/limit keyword.
---Do not know how to do this
+
+select max(budget) as [3rd Max Budget] from practice.company where budget<(select max(budget) as [2nd Max Budget] from practice.company  where  budget <(select max(budget) from practice.company))
+
+
+create table salaries( id uniqueIdentifier,name nvarchar(20) , salary bigint)
+
+insert into  salaries values (NEWID(),'Pavan',100000),
+(NEWID(),'Sai Ram',200000),
+(NEWID(),'Venky',300000),
+(NEWID(),'Charan',400000),
+(NEWID(),'Sandhya',500000),
+(NEWID(),'Anjani',600000),
+(NEWID(),'Kiran',700000),
+(NEWID(),'Shiv',800000),
+(NEWID(),'Mahesh',900000),
+(NEWID(),'Ranjit',1000000)
+
+	select * from (select name,salary  from salaries as A  ) A order by desc
+
 
 
 -- Testing group by select Location,RegId,Industry,Name from practice.company group by industry,Name,RegId,Location 
@@ -1121,7 +1139,119 @@ values
 
 select *
 from joins.StudentDetails
---14 15 31 35 left
+
+
+	
+
+
+	--08112022
+	--Type conversion
+
+	select 'Hi ' + cast(getdate() as  nvarchar(20))
+
+	select *,Name + ' has a budget of ' + cast(Budget as nvarchar(20)) as budgets from practice.company
+	select *,Name + ' has a budget of ' + convert(nvarchar(20),Budget) as budgets from practice.company
+
+	--select Budget + convert(int,Name) from practice.company
+
+
+	--Views
+	create view Vw_StudentsInfo  As 
+	select a.id,b.Hobbies  from joins.Students A inner join joins.StudentDetails B on A.Id=B.StudentId where location not in ('Nellore')
+	select * from Vw_StudentsInfo
+
+	drop view Vw_StudentsInfo
+
+	--30 Ques from Edureka
+	create table EmployeeInfo (
+	EmpId int,
+	EmpFname nvarchar(20),
+	EmpLname nvarchar(20),
+	Department nvarchar(20),
+	Project nvarchar(20),
+	Address nvarchar(20),
+	DOB datetime2,
+	Gender nvarchar(20),
+	constraint pk_EmployeeInfo primary key(EmpId)
+	)
+
+	create table EmployeePosition(
+	EmpId int,
+	EmpPosition nvarchar(20),
+	DateOfJoining datetime2,
+	Salary bigint,
+	constraint fk_EmpId foreign key (EmpId) references EmployeeInfo(EmpId)
+
+	)
+	insert into EmployeeInfo values
+	(1,'Sanjay','Mehra','HR','P1','Hyderabad(HYD)','01/12/1976','M'),
+	(2,'Ananya','Mishra','Admin','P2','Delhi(DEL)','02/05/1968','F'),
+	(3,'Rohan','Diwan','Account','P3','Mumbai(BOM)','01/01/1980','M'),
+	(4,'Sonia','Kulkarni','HR','P1','Hyderabad(HYD)','02/05/1992','F'),
+	(5,'Ankit','Kapoor','Admin','P2','Delhi(DEL)','03/07/1994','M')
+
+	insert into EmployeePosition values
+	(1,'Manager','01/05/2022',500000),
+	(2,'Executive','02/05/2022',75000),
+	(3,'Manager','01/05/2022',90000),
+	(2,'Lead','02/05/2022',85000),
+	(1,'Executive','01/05/2022',300000)
+
+	select * from EmployeeInfo
+	select * from EmployeePosition
+
+
+	--Q1. Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.
+	select UPPER(EmpFname) as EmpName from EmployeeInfo 
+	--Q2. Write a query to fetch the number of employees working in the department ‘HR’.	
+	select count(*) as NUMBER from EmployeeInfo group by Department having Department = 'HR' 
+	--Q3. Write a query to get the current date.
+	select getdate()
+	--Q4. Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.
+	select SUBSTRING(EmpLname,1,4) as lfour from EmployeeInfo
+	--Q5. Write a query to fetch only the place name(string before brackets) from the Address column of EmployeeInfo table.
+	
+	select substring (Address,1,charIndex('(',Address)-1) from EmployeeInfo 
+	
+	--Q6. Write a query to create a new table which consists of data and structure copied from the other table.
+	SELECT * INTO EmployeeInfoCopy FROM EmployeeInfo WHERE 1 = 0;
+	--Q7. Write q query to find all the employees whose salary is between 50000 to 100000.
+	select * from employeeinfo where salary between 50000 and 100000
+
+	select * from EmployeePosition
+
+	select EmpFname,EmpLName, Salary from EmployeeInfo A inner join EmployeePosition B on A.empid = B.EmpId where B.salary between 50000 and 100000
+
+	--Q8. Write a query to find the names of employees that begin with ‘S’.
+	Select * from EmployeeInfo where EmpFname like 'S%'
+
+	--Q9. Write a query to fetch top N records.
+	select  top 5 * from EmployeeInfo
+
+	--Q10. Write a query to retrieve the EmpFname and EmpLname in a single column as “FullName”. The first name and the last name must be separated with space.
+	Select EmpFname + ' '+  EmpLname as FullName from EmployeeInfo
+
+	--Q11. Write a query find number of employees whose DOB is between 02/05/1970 to 31/12/1975 and are grouped according to gender
+
+	select count(*)  from EmployeeInfo group by DOB having DOB between '02/05/1970' AND '31/12/1975'
+
+
+
+
+
+
+	--09112022 Functions and Procedures
+	create function dbo.myFunction
+	( @value1 nvarchar(20),
+	@value2 nvarchar(20)
+	)	
+	returns nvarchar(20) as
+	begin 
+	
+	return @value1 + @value2
+	end
+	select dbo.myFunction('Shiv ',1)
+	
 
 
 
@@ -1135,6 +1265,10 @@ from joins.StudentDetails
 
 
 
+
+
+
+	--create funcgtion with two params and concat use type conversion with a space with the name dbo.practice
 
 
 
