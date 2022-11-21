@@ -1212,9 +1212,11 @@ from joins.StudentDetails
 	--Q5. Write a query to fetch only the place name(string before brackets) from the Address column of EmployeeInfo table.
 	
 	select substring (Address,1,charIndex('(',Address)-1) from EmployeeInfo 
-	
+	select * from EmployeeInfo
 	--Q6. Write a query to create a new table which consists of data and structure copied from the other table.
-	SELECT * INTO EmployeeInfoCopy FROM EmployeeInfo WHERE 1 = 0;
+	SELECT * INTO EmployeeInfoCopy FROM EmployeeInfo ;
+	select * from employeeinfocopy
+	drop table EmployeeInfoCopy
 	--Q7. Write q query to find all the employees whose salary is between 50000 to 100000.
 	select * from employeeinfo where salary between 50000 and 100000
 
@@ -1236,10 +1238,54 @@ from joins.StudentDetails
 	select count(*)  from EmployeeInfo group by DOB having DOB between '02/05/1970' AND '31/12/1975'
 
 
+	--Q12. Write a query to fetch all the records from the EmployeeInfo table ordered by EmpLname in descending order and Department in the ascending order.
+	select * from EmployeeInfo order by  EmpLname desc ,Department 
 
+	-- Q13. Write a query to fetch details of employees whose EmpLname ends with an alphabet ‘A’ and contains five alphabets.
+	select * from EmployeeInfo where EmpLname like '%A' And len(Emplname)=5
+	--Q14. Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+	select * from EmployeeInfo where empfname not in ('Sanjay','Sonia')
+	--Q15. Write a query to fetch details of employees with the address as “DELHI(DEL)”.
+	SELECT * FROM EmployeeInfo WHERE Address = 'dELHI(DEL)'
+	--Q16. Write a query to fetch all employees who also hold the managerial position.
+	SELECT *FROM EmployeeInfo A INNER JOIN EmployeePosition B  on A.EmpId = B.EmpId where B.EmpPosition = 'Manager'
+	--Q17. Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.
+	select count(*) as count,department from EmployeeInfo group by 
+	--Q18. Write a query to calculate the even and odd records from a table. NO ROW NUMBER
+	--Q19. Write a SQL query to retrieve employee details from EmployeeInfo table who have a date of joining in the EmployeePosition table.
+	SELECT  distinct A.* FROM EmployeeInfo A inner join EmployeePosition B on  A.EmpId = B.EmpId where  b.DateOfJoining is not null
 
+	--SELECT * FROM EmployeeInfo E WHERE EXISTS (SELECT * FROM EmployeePosition P WHERE E.EmpId = P.EmpId);(query given by edureka)
+	--Q20. Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.
 
+	select salary from EmployeePosition E1 where 2>=(select count(salary) from EmployeePosition E2 where E1.Salary>=E2.Salary )
+	select salary from EmployeePosition E1 where 2>=(select count(salary) from EmployeePosition E2 where E1.Salary<=E2.Salary)
+	
 
+	
+	--Q21.Write a query to find the Nth highest salary from the table without using TOP/limit keyword.
+SELECT Salary 
+FROM EmployeePosition E1 
+WHERE 5-1 = ( 
+      SELECT COUNT( DISTINCT ( E2.Salary ) ) 
+      FROM EmployeePosition E2 
+      WHERE E2.Salary >  E1.Salary );
+
+	  --Q22. Write a query to retrieve duplicate records from a table.
+	  select * from  EmployeeInfo
+	  insert into EmployeeInfo values (1,'Sanjay','Mehra','HR','P1','Hyderabad(HYD)','1976-01-12 00:00:00.0000000','M')
+	 alter table employeeinfo drop constraint pk_EmployeeInfo
+	 alter table employeeposition drop constraint fk_EmpId
+	 select EmpId ,EmpFname,EmpLname ,COUNT(EmpId) as duplicate from EmployeeInfo GROUP BY EmpId , EmpFname,EmpLname  having Count(EmpId)>1
+	
+	--Q23. Write a query to retrieve the list of employees working in the same department. -Doubt
+
+	--Q24. -Doubt
+
+	--Q25. Write a query to find the third-highest salary from the EmpPosition table.
+	select top 1 salary,count(*) from EmployeePosition group by salary,count(*)  having EmployeePosition.Salary>EmployeePosition.Salary order by Salary desc
+	
+	
 	--09112022 Functions and Procedures
 	create function dbo.myFunction
 	( @value1 nvarchar(20),
@@ -1250,16 +1296,47 @@ from joins.StudentDetails
 	
 	return @value1 + @value2
 	end
-	select dbo.myFunction('Shiv ',1)
+	select dbo.myFunction('Shiv ',getDate())
 	
 
 
+	select * from practice.cars
+	create procedure sp_1
+	as	 
+	insert into practice.cars values(newId(),'JLR','Deender',20000,'Purple',340,2021)
+	
 
 
+	exec sp_1
 
+	alter procedure sp_2
+	(
+	@Brand nvarchar(20),
+	@Model nvarchar(20),
+	@Cost bigint,
+	@Color nvarchar(20),
+	@Topspeed int,
+	@year int	
+	
+	
+	)
+	as
+	begin	
+	declare @id uniqueidentifier
+	set @Id = newId()
+	
+	
+	insert into practice.cars  values(@Id,@Brand,@Model,@Cost,@Color,@Topspeed,@year)
+	end
+	select * from practice.cars
+	
 
+	exec sp_2 'Honda','NSX',1000000,'gREEN',290,2022
+	DROP PROCEDURE SP_2
 
+	
 
+	TRUNCATE TABLE practice.cars
 
 
 
@@ -1273,17 +1350,30 @@ from joins.StudentDetails
 
 
 
+	--Query to get the sixth highest budget
+	select distinct A.Name,A.budget from practice.company as A where 6= (select  count( distinct (B.budget)) from practice.company as B where A.Budget>B.Budget)
 
 
+	create schema subqueries
+	create table subqueries.ranks
+	(Name nvarchar(30),
+	Rank int)
+	insert into subqueries.ranks values('Shiv',1),('Sai',6),('Bro',2),('Sis',5),('Stephen',3),('Andrew',4),('Tate',9),('Check',8),('Mate',7),('Wassup',10)
+
+	select * from subqueries.ranks
 
 
+	--find name for person with rank of 5
+
+	select A.name,A.rank from subqueries.ranks as A where 5 = (select count(B.rank) from subqueries.ranks as B where A.rank>=B.rank)
 
 
+	select bottom  7 people
+	select A.name,A.rank from subqueries.ranks as A where 7>=(select count(B.rank) from subqueries.ranks as B where A.rank<=B.rank) order by rank
 
+	select * from subqueries.ranks
 
-
-
-
+	SELECT TOP 9 * FROM SUBQUERIES.RANKS ORDER BY RANK DESC  
 
 
 
