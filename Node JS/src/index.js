@@ -7,7 +7,7 @@ const students = require("./sample2.json")
 
 const app = express();
 app.get("/",(req,res)=>{
-    res.status(200).send("Hey")});
+    res.status(200).send("Hey there!")});
 app.get("/students",(req,res)=>{   
             
 
