@@ -3,21 +3,14 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const students = require("./sample2.json")
 
-
-
 const app = express();
-app.get("/",(req,res)=>{
-    res.status(200).send("Hey there!")});
-app.get("/students",(req,res)=>{   
-            
+app.get("/",(req, res)=>{
+  res.status(200).send("Hey there!")
 
-    
-    res.status(200).send(students)
-    
-
-})    
-//to creeate server 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, ()=>{
-    console.log("listening on port number " + PORT)
 })
+app.get("/details",(req, res)=>{
+  res.status(200).send(students);
+})
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT,()=>{})
