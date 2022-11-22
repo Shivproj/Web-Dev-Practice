@@ -29,5 +29,5 @@ app.get("/students",(req,res)=>{
 //to creeate server 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, ()=>{
-    console.log("listening on port " + PORT)
+    console.log("listening on port number " + PORT)
 })
