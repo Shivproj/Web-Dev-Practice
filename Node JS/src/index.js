@@ -1,16 +1,20 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const students = require("./sample2.json")
-
+const data1 = require("./routes/students.route")
 const app = express();
-app.get("/",(req, res)=>{
-  res.status(200).send("Hey there!")
+app.use(cors())
+app.get("/",function(req,res) {
+  res.status(200).send("Hi there!")
+})
+app.use("/data",data1)
 
-})
-app.get("/details",(req, res)=>{
-  res.status(200).send(students);
-})
+
+
+
+
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{})
