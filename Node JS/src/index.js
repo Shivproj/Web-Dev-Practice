@@ -7,6 +7,7 @@ app.use(cors())
 app.get("/",function(req,res) {
   res.status(200).send("Hey there!")
 })
+
 app.use("/data",data1)
 
 
